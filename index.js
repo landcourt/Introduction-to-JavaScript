@@ -1,12 +1,31 @@
 /************************************************************** Task 1: Warm-up! **************************************************************/
 //Task a: declare a variable called votingAge, console log true if age > 18 (no function required)
 
+let votingAge = 18;
+let age = 24;
 
+if(age >= 18){
+    console.log(true)
+}
+if(age <= 17){
+    console.log(false)
+}
 
 
 
 //Task b: declare a variable and then use a conditional to change the value of that variable based on the value assigned to a second variable (no function required)
 
+let food = 'curry';
+let taste = 'good'; 
+
+if(taste === 'good'){
+    food = 'curry'
+    console.log(food)
+}
+else if(taste ==='bad'){
+    food = 'canned meat'
+    console.log(food)
+}
 
 
 
@@ -14,12 +33,14 @@
 //Task c: Convert string ("1999") to integer (1999)  (no function required) // hint look up the Number method
 
 
+console.log(Number("1999"));
 
 
 
 //Task d: Write a function to multiply a*b 
 
-
+multiply = (a, b) => a * b;
+console.log(multiply(3, 5));
 
 
 
@@ -27,8 +48,8 @@
 //Age in Dog years
 //write a function that takes your age and returns it to you in dog years - they say that 1 human year is equal to seven dog years 
 
-
-
+dogYears = (age, num) => age * num
+console.log(dogYears(24, 7));
 
 
 /************************************************************** Task 3 **************************************************************/
@@ -49,8 +70,30 @@
 
 // when you are finished invoke your function with the weight of 15 lbs and the age of 1 year - if your calculations are correct your result should be 0.44999999999999996
   
-
-
+dogFeeder = (lbs, yrs) => {
+    if(lbs <= 5 && yrs >= 1){
+        return .05 * lbs;
+    }
+    else if(lbs <= 10 && yrs >= 1){
+        return .04 * lbs;
+    }
+    else if(lbs <= 15 && yrs >= 1){
+        return .03 * lbs;
+    }
+    else if(lbs > 15 && yrs >= 1){
+        return .02 * lbs;
+    }
+    if(yrs <= .4){
+        return .1 * lbs;
+    }
+    else if(yrs <= .7){
+        return .05 * lbs;
+    }
+    else if(yrs <= 1){
+        return .04 * lbs;
+    }
+}
+console.log(dogFeeder(15, 1));
 
 
 /************************************************************** Task 4 **************************************************************/
@@ -60,21 +103,34 @@
 // use math.random to determine the computers choice 
 // hint while you can complete this with only conditionals based on strings it may help to equate choice to a number 
 
-  
-  
+
+function RPS(string){
+    
+} 
 
 /************************************************************** Task 5 **************************************************************/
 //Metric Converter
 //a. KM to Miles - should take the number of kilometers and convert it to the equal number of miles
 
+let miles = .62137;
 
+function converter(km){
+    miles = km * miles;
+    return miles;
+}
 
+console.log(converter(4));
 
 
 //b. Feet to CM - should take the number of feet and convert it to the equal number of centimeters
   
+let centimeters = .032808;
 
-
+function converterTwo(ft){
+    centimeters = ft / centimeters
+    return centimeters;
+}
+console.log(converterTwo(5));
 
 
 /************************************************************** Task 6 **************************************************************/
@@ -82,9 +138,16 @@
 // create a function called annoyingSong
 // the function should take a starting number as an argument and count down - at each iteration it should log (number) bottles of soda on the wall, (number) bottles of soda, take one down pass it around (number left over) bottles of soda on the wall`
   
+function annoyingSong(num){
+    for(let i = num; i > 0; i--){
+       console.log(`${[i]} bottles of soda on the wall, ${[i]} bottles of soda, take one down pass it around ${[i] - 1} bottles of soda on the wall.`)
+        
+        console.log[i];
+        
+    }
+}
 
-
-
+console.log(annoyingSong(99));
 
 /************************************************************** Task 7 **************************************************************/
 //Grade Calculator
@@ -95,9 +158,25 @@
 //60s should be D 
 //and anything below 60 should be F
   
+function gradeCalc(grade){
+    if(grade >= 90){
+        return('A')
+    }
+    else if(grade >= 80){
+        return('B')
+    }
+    else if(grade >= 70){
+        return('C')
+    }
+    else if(grade >= 60){
+        return('D')
+    }
+    else if(grade < 60){
+        return('F')
+    }
+}
 
-  
-  
+console.log(gradeCalc(94));
 
 /************************************************************** Stretch **************************************************************/
 //Create a function that counts the number of vowels within a string. It should handle both capitalized and uncapitalized vowels.
